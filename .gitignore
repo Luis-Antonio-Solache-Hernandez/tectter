@@ -3,8 +3,8 @@ lib
 include
 build
 *.pyc
-.Python
-.sqlite3
-.py~
+*.Python
+*.sqlite3
+*.py~
 .gitignore~
 img

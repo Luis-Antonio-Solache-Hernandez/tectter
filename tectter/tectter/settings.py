@@ -121,15 +121,17 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'main',
+    'registration',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
 )
+ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'tectter.v1@gmail.com'
-EMAIL_HOST_PASSWORD = 'hnus321sinag'
+EMAIL_HOST_PASSWORD = 'hnus321sinaj'
 EMAIL_USE_TLS = True
-EMAIL_PORT = 58
+EMAIL_PORT = 587
 
 LOGIN_REDIRECT_URL = "/"
 # A sample logging configuration. The only tangible logging

@@ -3,11 +3,15 @@
     <meta charset="utf-8"/>
     <title></title>
     </head>
-    <body>
-        <form action="." method="post">
+<body>
+<p>Formulario de luis</p>
+<p></p>
+{% csrf_token %}
+        <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Entrar" />
-        </form>
-    </body>
+            {{ form.as_p}}
+            <input type="submit"/>
+        </form></br>
+<a href="{% url registration.views.register %}" > Registrarse </a>
+</body>
 </html>

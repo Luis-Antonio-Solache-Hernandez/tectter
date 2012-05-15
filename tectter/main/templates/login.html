@@ -5,12 +5,15 @@
     </head>
 <body>
 <p>Formulario de luis</p>
+{% if menerror %}
+<p>{{ menerror }}</p>
+{% endif %}
 <p></p>
 {% csrf_token %}
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p}}
-            <input type="submit"/>
+            <input type="submit" value="Iniciar Sesion"/>
         </form></br>
 <a href="{% url registration.views.register %}" > Registrarse </a>
 </body>

@@ -112,6 +112,8 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'main',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -122,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'main',
     'registration',
+    #'passwords',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
@@ -132,8 +135,11 @@ EMAIL_HOST_USER = 'tectter.v1@gmail.com'
 EMAIL_HOST_PASSWORD = 'hnus321sinaj'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-
 LOGIN_REDIRECT_URL = "/"
+
+
+PASSWORD_MIN_LENGTH = 8
+PASSWORD_COMPLEXITY = {"UPPER":  1, "LOWER":  1, "DIGITS": 1}
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

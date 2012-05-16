@@ -4,7 +4,7 @@
     <title></title>
     </head>
 <body>
-<p>Formulario de luis</p>
+<p>Formulario MBB</p>
 <p></p>
 {% csrf_token %}
         <form method="POST">
@@ -12,6 +12,13 @@
             {{ form.as_p}}
             <input type="submit"/>
         </form></br>
-<a href="{% url registration.views.register %}" > Registrarse </a>
+<br>
+<a href="{% url registration.views.register %}" > Register </a>
+<br>
+<br>
+<a href="{% url django.contrib.auth.views.password_reset %}">Forgot your password?</a>
+<br>
+<br>
+</body>
 </body>
 </html>

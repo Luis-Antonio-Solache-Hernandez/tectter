@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 #from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 
 @login_required
@@ -16,12 +16,20 @@ def login(request):
     form = AuthenticationForm()
     if request.method == "POST":
         username = request.POST['username']
-        #if '@' in request.POST['username']:
-         #   username = User.objects.get(email=username)
+        try:
+            user = User.objects.get(email=username)
+        except User.DoesNotExist:
+            try:
+                user = User.objects.get(username=username)
+            except User.DoesNotExist:
+                menerror = 'No te haz registrado, por favor registrate'
+                return render_to_response('login.html', {
+        'form': form, 'menerror': menerror,
+        }, RequestContext(request))
         password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(username=user.username, password=password)
         form = AuthenticationForm(None, request.POST)
-        if form.is_valid():
+        if user is not None and user.is_active:
             auth.login(request, user)
             return redirect('index')
     return render_to_response('login.html', {

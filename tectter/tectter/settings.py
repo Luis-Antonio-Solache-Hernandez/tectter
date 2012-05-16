@@ -112,6 +112,8 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'main',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -120,8 +122,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    'main',
-    'registration',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 

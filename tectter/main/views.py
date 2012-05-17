@@ -41,18 +41,6 @@ def login(request):
         }, RequestContext(request))
 
 
-def add_perfil(request):
-    form = PerfilForm()
-    if request.method == 'POST':
-        form = PerfilForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    return render_to_response('add_perfil.html', {
-        'form': form,
-    }, RequestContext(request))
-
-
 @login_required
 def show_perfil(request, username):
     perfil = Perfil.objects.get(user=request.user)

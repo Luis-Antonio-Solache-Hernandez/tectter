@@ -8,7 +8,10 @@ from django.contrib.auth.models import User
 
 @login_required
 def index(request):
-    return render_to_response('index.html', context_instance=RequestContext(request))
+    user = request.user.get_profile()
+    return render_to_response('index.html', {
+        'user': user,
+        }, RequestContext(request))
 
 
 def login(request):

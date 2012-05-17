@@ -3,7 +3,7 @@ from main.models import Perfil, Tweet
 
 
 class PerfilAdmin(admin.ModelAdmin):
-    list_display = ('user', 'image', 'birth_date', 'city', 'public', 'biography',)
+    list_display = ('user', 'name', 'image', 'birth_date', 'city', 'public', 'biography',)
 
 
 class TweetAdmin(admin.ModelAdmin):

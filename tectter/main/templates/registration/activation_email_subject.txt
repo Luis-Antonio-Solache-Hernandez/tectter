@@ -1,1 +1,1 @@
-Bienvenido a {{ protocol }}://{{ site }}, por favor active su cuenta antes de {{ expiration_days }} días.
+Bienvenido a http://{{ site }}, por favor active su cuenta antes de {{ expiration_days }} días.

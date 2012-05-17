@@ -6,4 +6,5 @@
 <body>
     Ha entrado como {{ user.user.username }}
     <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
+    <p><a href="{% url show_perfil user.user.username %}">Perfil</a></p>
 </html>

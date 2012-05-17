@@ -1,9 +1,11 @@
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template.context import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from main.models import Perfil
+from main.forms import PerfilForm
 
 
 @login_required
@@ -35,5 +37,39 @@ def login(request):
             auth.login(request, user)
             return redirect('index')
     return render_to_response('login.html', {
+        'form': form,
+        }, RequestContext(request))
+
+
+def add_perfil(request):
+    form = PerfilForm()
+    if request.method == 'POST':
+        form = PerfilForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    return render_to_response('add_perfil.html', {
+        'form': form,
+    }, RequestContext(request))
+
+
+@login_required
+def show_perfil(request, username):
+    perfil = Perfil.objects.get(user=request.user)
+    return render_to_response('show_perfil.html', {
+        'perfil': perfil,
+    })
+
+
+@login_required
+def edit_perfil(request, username):
+    user = get_object_or_404(Perfil, user=request.user)
+    form = PerfilForm(instance=user)
+    if request.method == 'POST':
+        form = PerfilForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    return render_to_response('add_perfil.html', {
         'form': form,
         }, RequestContext(request))

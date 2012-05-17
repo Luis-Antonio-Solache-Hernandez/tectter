@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>{{perfil.name}} -Blog</title>
+</head>
+<body>
+    <a href = "{% url index %}">Home</a>
+    <h1>{{perfil.user.username}}</h1>
+    </br><a href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
+    </p>
+</body>
+</html>

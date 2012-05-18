@@ -8,19 +8,6 @@
     <h3>{{ perfil.user.username }} </h3>
     {% if useractual == perfil.user %}
     </br><a href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
-    {% else %}
-    <form action="/seguir/" method="post">
-                {% csrf_token %}
-                {% csrf_token %}
-                <input type="hidden" name="username" value="{{ perfil.user.username }}">
-                <p>
-                    {% if siguiendo %}
-                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
-                    {% else %}
-                        <input class="btn btn-success" type="submit" value="Seguir">
-                    {% endif %}
-                </p>
-            </form>
     {% endif %}
 {% block contenido %}
 <section>

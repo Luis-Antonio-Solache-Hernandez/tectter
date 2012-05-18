@@ -11,10 +11,10 @@
     <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
         <div class="miniprofile">
             {{ user.user.username }}
-            <a href={{user.user.username}}>Perfil</a>
+            <a href="{% url show_perfil user.user.username %}">Perfil</a>
             <table width="80%" cellspacing="5" cellpadding="0">
             <tr>
-            <td><a href = <h2> {{user.tweet.count}} Tweets </h2></a></td>
+            <td>Tweets {{ user.tweet.count }} </td>
             <td> Siguiendo </td>
             <td> Seguidores </td>
             </tr>

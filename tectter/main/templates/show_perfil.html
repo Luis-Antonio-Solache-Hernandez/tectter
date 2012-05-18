@@ -17,7 +17,8 @@
                     {% if siguiendo %}
                         <input class="btn btn-danger" type="submit" value="Dejar de seguir">
                     {% else %}
-                        <input class="btn btn-success" type="submit" value="Seguir">
+                        </br><a href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
+                        <!--<input class="btn btn-success" type="submit" value="Seguir"-->
                     {% endif %}
                 </p>
             </form>

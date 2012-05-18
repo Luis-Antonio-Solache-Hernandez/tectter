@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>{{perfil.name}} -Blog</title>
+</head>
+<body>
+    <a href = "{% url index %}">Home</a>
+    <h1>{{perfil.name}}</h1>
+    <h3>{{ perfil.user.username }} </h3>
+    {% if useractual == perfil.user %}
+    </br><a href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
+    {% else %}
+    <form action="/seguir/" method="post">
+                {% csrf_token %}
+                {% csrf_token %}
+                <input type="hidden" name="username" value="{{ perfil.user.username }}">
+                <p>
+                    {% if siguiendo %}
+                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                    {% else %}
+                        <input class="btn btn-success" type="submit" value="Seguir">
+                    {% endif %}
+                </p>
+            </form>
+    {% endif %}
+{% block contenido %}
+<section>
+    <header>
+        <h3>Ciudad: {{ perfil.city }}</h3>
+        <p>
+            Ultima vez conectado: {{ perfil.birth_date }}<br>
+            Email: <a href="mailto:{{ perfil.user.email }}">{{ perfil.user.email }}</a>
+        </p>
+</section>
+{% endblock %}
+<h1>Tweets</h1>
+{% for tweet in tweets %}
+<div>
+        <p><font size=5><b>{{ tweet.status }}</font></b>
+        </br><font size=2> <a href="{% url show_perfil tweet.name.user %}" >{{ tweet.name.username }}</a> at {{ tweet.created_at }}</font>
+    </br></br>
+    </div>
+    {% endfor %}
+</body>
+</html>

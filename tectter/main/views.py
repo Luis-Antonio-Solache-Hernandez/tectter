@@ -37,3 +37,14 @@ def login(request):
     return render_to_response('login.html', {
         'form': form,
         }, RequestContext(request))
+
+def add_twitt(request):
+    form = TwittForm()
+    if request.method == 'POST':
+        form = TwittForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render_to_response('add_twitt.html', {
+        'form': form,
+    }, RequestContext(request))

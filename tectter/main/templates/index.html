@@ -2,8 +2,26 @@
 <head>
     <meta charset="utf-8"/>
     <title></title>
+    <script type="text/javascript" src="{{STATIC_URL}}jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}index.js"></script>
+    <link rel ="stylesheet" type="text/css" href="{{STATIC_URL}}index.css">
 </head>
 <body>
     Ha entrado como {{ user.user.username }}
     <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
+        <div class="miniprofile">
+            {{ user.user.username }}
+            <a href={{user.user.username}}>Perfil</a>
+            <table width="80%" cellspacing="5" cellpadding="0">
+            <tr>
+            <td><a href = <h2> {{user.tweet.count}} Tweets </h2></a></td>
+            <td> Siguiendo </td>
+            <td> Seguidores </td>
+            </tr>
+            </table>
+            <textarea class=newtwetter cols="30" rows="5"></textarea>
+            <button class=bt type="submit"><strong>Twittear</strong>
+                <a href="{% url add_twitt %}"></a></button>
+        </div>
+</body>
 </html>

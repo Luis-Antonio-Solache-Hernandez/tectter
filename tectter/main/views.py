@@ -151,7 +151,7 @@ def seguir(request):
         perfilactual.friend.remove(perfil)
     except Perfil.DoesNotExist:
         perfilactual.friend.add(perfil)
-    return redirect('show_perfil', username)
+    return redirect(request.META['HTTP_REFERER'])
 
 
 def tweetear(request):
@@ -163,4 +163,4 @@ def tweetear(request):
 
 def delete_tweet(request, pk):
     Tweet.objects.filter(pk=pk).delete()
-    return redirect('index')
+    return redirect(request.META['HTTP_REFERER'])

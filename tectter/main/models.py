@@ -10,7 +10,7 @@ class Perfil(models.Model):
     city = models.CharField(max_length=50, blank=True, null=True)
     public = models.BooleanField(default=True)
     biography = models.TextField(max_length=50, blank=True, null=True)
-    friend = models.ManyToManyField('self', blank=True)
+    friend = models.ManyToManyField('self', blank=True, symmetrical=False)
 
     def __unicode__(self):
         return '%s' % self.user.username
@@ -31,3 +31,6 @@ class Tweet(models.Model):
 
     def __unicode__(self):
         return '%s' % self.status
+
+    class Meta:
+        ordering = ['-created_at']

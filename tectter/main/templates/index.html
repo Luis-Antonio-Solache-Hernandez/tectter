@@ -7,20 +7,38 @@
     <link rel ="stylesheet" type="text/css" href="{{STATIC_URL}}index.css">
 </head>
 <body>
-    Ha entrado como {{ perfil.user.username }}
     <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
         <div class="miniprofile">
-            {{ perfil.user.username }}
-            <a href="{% url show_perfil perfil.user.username %}">Perfil</a>
+            <a href="{% url show_perfil perfil.user.username %}"> {{ perfil.name }} </a>
+        </br><h9>Editar tu perfil</h9>
             <table width="80%" cellspacing="5" cellpadding="0">
             <tr>
-            <td>Tweets {{ perfil.tweet.count }} </td>
-            <td> Siguiendo {{ perfil.friend.count }}</td>
-            <td> Seguidores {{ seguidores }}</td>
+            <td><a href="{% url show_perfil perfil.user.username %}"> {{ perfil.tweet.count }} Tweets</a></td>
+            <td><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a></td>
+            <td><a href="{% url show_perfil perfil.user.username %}seguidores/"> {{ seguidores }} Seguidores</a></td>
             </tr>
             </table>
-            <textarea class=newtwetter cols="30" rows="5"></textarea>
+            <form action="/tweetear/" method="post">
+                {% csrf_token %}
+                {% csrf_token %}
+            <textarea class=newtwetter cols="30" name="status" rows="5"></textarea>
             <button class=bt type="submit"><strong>Twittear</strong>
+            </form>
         </div>
+        <div class="main">
+            {% if tweets %}
+        <h1>Tweets</h1>
+{% for tweet in tweets %}
+<div>
+        <p><font size=5><b>{{ tweet.status }}</font></b>
+        </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
+        {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
+    </br>
+{% if tweet.name == perfil %}
+                <a href="/tweet/{{ tweet.id }}/delete" >eliminar</a>
+                {% endif %}</br>
+    </div>
+    {% endfor %}</div>
+    {% endif %}
 </body>
 </html>

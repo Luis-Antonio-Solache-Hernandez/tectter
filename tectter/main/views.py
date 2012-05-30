@@ -13,12 +13,16 @@ def index(request):
     try:
         perfil = Perfil.objects.get(user=request.user)
         seguidores = Perfil.objects.filter(friend=perfil).count()
+        siguiendo = perfil.friend.all()
+        tweets = Tweet.objects.filter(name__id__in=siguiendo) | Tweet.objects.filter(name=perfil)
     except Perfil.DoesNotExist:
         perfil = request.user.get_profile()
         seguidores = 0
+        tweets = False
     return render_to_response('index.html', {
         'perfil': perfil,
         'seguidores': seguidores,
+        'tweets': tweets,
         }, RequestContext(request))
 
 
@@ -52,6 +56,7 @@ def show_perfil(request, username):
     user = User.objects.get(username=username)
     perfil = Perfil.objects.get(user=user)
     tweets = Tweet.objects.filter(name=perfil)
+    nseguidores = Perfil.objects.filter(friend=perfil).count()
     try:
         siguiendo = Perfil.objects.get(user=request.user, friend=perfil)
         siguiendo = True
@@ -62,6 +67,8 @@ def show_perfil(request, username):
         'useractual': request.user,
         'siguiendo': siguiendo,
         'tweets': tweets,
+        'ntweets': tweets.count(),
+        'nseguidores': nseguidores
     }, RequestContext(request))
 
 
@@ -84,6 +91,56 @@ def edit_perfil(request, username):
         }, RequestContext(request))
 
 
+@login_required
+def seguidores(request, username):
+    user = User.objects.get(username=username)
+    perfil = Perfil.objects.get(user=user)
+    seguidores = Perfil.objects.filter(friend=perfil)
+    perfilactual = Perfil.objects.get(user=request.user)
+    myfriends = perfilactual.friend.all()
+    nseguidores = Perfil.objects.filter(friend=perfil).count()
+    ntweets = Tweet.objects.filter(name=perfil).count()
+    try:
+        siguiendo = Perfil.objects.get(user=request.user, friend=perfil)
+        siguiendo = True
+    except Perfil.DoesNotExist:
+        siguiendo = False
+    return render_to_response('show_perfil.html', {
+        'perfil': perfil,
+        'useractual': request.user,
+        'siguiendo': siguiendo,
+        'seguidores': seguidores,
+        'myfriends': myfriends,
+        'nseguidores': nseguidores,
+        'ntweets': ntweets,
+    }, RequestContext(request))
+
+
+@login_required
+def siguiendo(request, username):
+    user = User.objects.get(username=username)
+    perfil = Perfil.objects.get(user=user)
+    sig = perfil.friend.all()
+    perfilactual = Perfil.objects.get(user=request.user)
+    myfriends = perfilactual.friend.all()
+    nseguidores = Perfil.objects.filter(friend=perfil).count()
+    ntweets = Tweet.objects.filter(name=perfil).count()
+    try:
+        siguiendo = Perfil.objects.get(user=request.user, friend=perfil)
+        siguiendo = True
+    except Perfil.DoesNotExist:
+        siguiendo = False
+    return render_to_response('show_perfil.html', {
+        'perfil': perfil,
+        'useractual': request.user,
+        'siguiendo': siguiendo,
+        'sig': sig,
+        'myfriends': myfriends,
+        'nseguidores': nseguidores,
+        'ntweets': ntweets,
+    }, RequestContext(request))
+
+
 def seguir(request):
     username = request.POST['username']
     user = User.objects.get(username=username)
@@ -95,3 +152,15 @@ def seguir(request):
     except Perfil.DoesNotExist:
         perfilactual.friend.add(perfil)
     return redirect('show_perfil', username)
+
+
+def tweetear(request):
+    status = request.POST['status']
+    perfil = Perfil.objects.get(user=request.user)
+    Tweet.objects.create(name=perfil, status=status)
+    return redirect('index')
+
+
+def delete_tweet(request, pk):
+    Tweet.objects.filter(pk=pk).delete()
+    return redirect('index')

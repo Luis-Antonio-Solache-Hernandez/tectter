@@ -32,15 +32,71 @@
                 </p>
             </form>
     {% endif %}
-{% if siguiendo %}
-<h1>Tweets</h1>
-{% for tweet in tweets %}
-<div>
-        <p><font size=5><b>{{ tweet.status }}</font></b>
-        </br><font size=2> <a href="{% url show_perfil tweet.name.user %}" >{{ tweet.name.username }}</a> at {{ tweet.created_at }}</font>
-    </br></br>
-    </div>
+    </br><a href="{% url show_perfil perfil.user.username %}">{{ ntweets }} Tweets</a>
+    </br><a href="{% url show_perfil perfil.user.username %}seguidores/">{{ nseguidores }} Seguidores</a>
+    </br><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a>
+{% if tweets %}
+    {% if siguiendo or useractual == perfil.user or perfil.public %}
+        <h1>Tweets</h1>
+        {% for tweet in tweets %}
+            <div>
+                <p><font size=5><b>{{ tweet.status }}</font></b>
+                </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
+                {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
+                </br>
+                {% if useractual == perfil.user %}
+                <a href="/tweet/{{ tweet.id }}/delete" >eliminar</a>
+                {% endif %}
+            </br>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endif %}
+{% if seguidores %}
+    <h1>Seguidores</h1>
+    {% for perfil in seguidores %}
+        <div>
+            <p><font size=5><b>{{ perfil.name }}</font></b>
+            </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
+            <form action="/seguir/" method="post">
+                {% csrf_token %}
+                {% csrf_token %}
+                <input type="hidden" name="username" value="{{ perfil.user.username }}">
+                <p>
+                    {% if perfil in myfriends %}
+                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                    {% else %}
+                        <input class="btn btn-success" type="submit" value="Seguir">
+                    {% endif %}
+                </p>
+            </form>
+        </br></br>
+        </div>
     {% endfor %}
 {% endif %}
+{% if sig %}
+    <h1>Siguiendo a:</h1>
+    {% for perfil in sig %}
+        <div>
+            <p><font size=5><b>{{ perfil.name }}</font></b>
+            </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
+            </br>
+        <form action="/seguir/" method="post">
+                {% csrf_token %}
+                {% csrf_token %}
+                <input type="hidden" name="username" value="{{ perfil.user.username }}">
+                <p>
+                    {% if perfil in myfriends %}
+                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                    {% else %}
+                        <input class="btn btn-success" type="submit" value="Seguir">
+                    {% endif %}
+                </p>
+            </form>
+        </br>
+        </div>
+    {% endfor %}
+{% endif %}
+
 </body>
 </html>

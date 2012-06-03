@@ -71,7 +71,7 @@ def edit_perfil(request, username):
     form = PerfilForm(instance=perfil)
     tweets = Tweet.objects.filter(name=perfil)
     if request.method == 'POST':
-        form = PerfilForm(request.POST, instance=perfil)
+        form = PerfilForm(request.POST, request.FILES, instance=perfil)
         if form.is_valid():
             form.save()
             return render_to_response('show_perfil.html', {

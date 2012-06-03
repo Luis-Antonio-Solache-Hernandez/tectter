@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from registration.forms import RegistrationFormUniqueEmail
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -22,4 +23,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^account/', include('django.contrib.auth.urls')),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+     url(r'^%s/(?P<path>.*)$' % settings.MEDIA_URL, 'django.views.static.serve', {
+                'document_root': settings.MEDIA_ROOT,
+            })
 )

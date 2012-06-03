@@ -23,7 +23,5 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^account/', include('django.contrib.auth.urls')),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
-     url(r'^%s/(?P<path>.*)$' % settings.MEDIA_URL, 'django.views.static.serve', {
-                'document_root': settings.MEDIA_ROOT,
-            })
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
 )

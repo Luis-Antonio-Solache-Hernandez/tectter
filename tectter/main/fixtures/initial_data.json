@@ -1,0 +1,815 @@
+[
+    {
+        "pk": 12, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "En clase con @andres y @janis que no llega", 
+            "created_at": "2012-05-30T19:18:11.096Z", 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "SOY GANIS LA GANOSA", 
+            "created_at": "2012-05-30T17:25:33.078Z", 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "yo tambien programo, ya casi sale :D", 
+            "created_at": "2012-05-30T16:51:54.445Z", 
+            "name": 5
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "programando en el nodo", 
+            "created_at": "2012-05-30T16:15:42.541Z", 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "twiit de ganis", 
+            "created_at": "2012-05-30T16:01:06.762Z", 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "twit 1 de andres", 
+            "created_at": "2012-05-29T22:43:49.689Z", 
+            "name": 4
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "twit 1 de luis", 
+            "created_at": "2012-05-29T22:43:32.456Z", 
+            "name": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "twit 1 de janis", 
+            "created_at": "2012-05-29T22:43:11.018Z", 
+            "name": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "main.tweet", 
+        "fields": {
+            "status": "twit 1 de admin", 
+            "created_at": "2012-05-25T18:47:14.954Z", 
+            "name": 3
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "contenttype", 
+            "name": "content type", 
+            "app_label": "contenttypes"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "group", 
+            "name": "group", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "logentry", 
+            "name": "log entry", 
+            "app_label": "admin"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "perfil", 
+            "name": "perfil", 
+            "app_label": "main"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "permission", 
+            "name": "permission", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "registrationprofile", 
+            "name": "registration profile", 
+            "app_label": "registration"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "session", 
+            "name": "session", 
+            "app_label": "sessions"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "site", 
+            "name": "site", 
+            "app_label": "sites"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "tweet", 
+            "name": "tweet", 
+            "app_label": "main"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "user", 
+            "name": "user", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": "c3d4067ca8d7d942e368ccd5bb0435ca", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-05-31T01:52:31.829Z", 
+            "session_data": "NjlkOTQ0YjA4YzliNDlkZTI1NGYyMDczMmMxZDE1MTBjMTU3NDU5YjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "ed32f54ee39a326f11161887ba7d0025", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-05-31T22:47:23.279Z", 
+            "session_data": "MzFhMGI0MmFhOGViYWU1NjgyMzg0NGEzMzYyN2JjYTA5ZDQ5ZGVlNTqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+        }
+    }, 
+    {
+        "pk": "e11bb17d31c92cf50ff94e250eecffdd", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-02T17:20:15.175Z", 
+            "session_data": "MTAxMDc4NWRkYzhiMjY3OGQxMDIwNzE2YmU5MTVkZGU3ZmYyYmM4NDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLA3Uu\n"
+        }
+    }, 
+    {
+        "pk": "460759ebbb5807bd4ce7825a27730907", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-04T13:35:59.841Z", 
+            "session_data": "NjlkOTQ0YjA4YzliNDlkZTI1NGYyMDczMmMxZDE1MTBjMTU3NDU5YjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "2308512024c998ab0846c1c83639c9a4", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-12T23:19:12.608Z", 
+            "session_data": "NjlkOTQ0YjA4YzliNDlkZTI1NGYyMDczMmMxZDE1MTBjMTU3NDU5YjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "14137b2eb7e0c3aad3a79d9850b975c3", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-12T23:49:18.229Z", 
+            "session_data": "M2NjZDE2NmMwZjAzOTJmZTMzNzg1OTIzZGEwMjk0MGE1YjNiOGNhMDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLBHUu\n"
+        }
+    }, 
+    {
+        "pk": "8a0638808aad05d05cb943cc40e86ec0", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-13T20:49:13.886Z", 
+            "session_data": "MzFhMGI0MmFhOGViYWU1NjgyMzg0NGEzMzYyN2JjYTA5ZDQ5ZGVlNTqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+        }
+    }, 
+    {
+        "pk": "c5c36db737c6529166d246cf30a968a1", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2012-06-13T20:57:24.021Z", 
+            "session_data": "OTRjYjkzMDU0ZjcwMTQ4MjllNTg4M2JjZTdkZTcxYTI4YjAwZjk0NDqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHED\nVQ1fYXV0aF91c2VyX2lkcQRLAXUu\n"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "localhost:8000", 
+            "name": "localhost:8000"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_logentry", 
+            "name": "Can add log entry", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_logentry", 
+            "name": "Can change log entry", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_logentry", 
+            "name": "Can delete log entry", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_group", 
+            "name": "Can add group", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_group", 
+            "name": "Can change group", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_group", 
+            "name": "Can delete group", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_permission", 
+            "name": "Can add permission", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_permission", 
+            "name": "Can change permission", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_permission", 
+            "name": "Can delete permission", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_user", 
+            "name": "Can add user", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_user", 
+            "name": "Can change user", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_user", 
+            "name": "Can delete user", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_contenttype", 
+            "name": "Can add content type", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_contenttype", 
+            "name": "Can change content type", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_contenttype", 
+            "name": "Can delete content type", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_perfil", 
+            "name": "Can add perfil", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_perfil", 
+            "name": "Can change perfil", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_perfil", 
+            "name": "Can delete perfil", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_tweet", 
+            "name": "Can add tweet", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_tweet", 
+            "name": "Can change tweet", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_tweet", 
+            "name": "Can delete tweet", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_registrationprofile", 
+            "name": "Can add registration profile", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_registrationprofile", 
+            "name": "Can change registration profile", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_registrationprofile", 
+            "name": "Can delete registration profile", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_session", 
+            "name": "Can add session", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_session", 
+            "name": "Can change session", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_session", 
+            "name": "Can delete session", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_site", 
+            "name": "Can add site", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_site", 
+            "name": "Can change site", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_site", 
+            "name": "Can delete site", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-05-30T20:57:23.920Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$eFOnNw2H1m1G$8KKWDLuQlLP6l0bHibnQxYy7hK75w/w8nXmPDBDFbHs=", 
+            "email": "admin@admin.com", 
+            "date_joined": "2012-05-17T01:51:44.335Z"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "janis", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-05-30T20:49:13.797Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$M2ZGuNMcyyjL$cJXUiWFYl/Wx6gXY9H9BBQxhm398pghymhFmdXuYaxE=", 
+            "email": "jis_malaj@hotmail.com", 
+            "date_joined": "2012-05-17T01:52:53.934Z"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "luis", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-05-25T18:47:55.919Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$jxfXP7HTgpJQ$w2WnWL8Z/6Wuyif8TeTlxAAbaRq2ICQvk1Sf937SYPY=", 
+            "email": "luissol.h@gmail.com", 
+            "date_joined": "2012-05-17T02:04:34.194Z"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "andres", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-05-29T23:49:18.128Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$JB6SrRb68C8o$OF/6OOUqzT6JVr3zMOdzCaNr21U3HSIhH6brJ06vIUM=", 
+            "email": "andres.torres.marroquin@gmail.com", 
+            "date_joined": "2012-05-18T19:40:03.186Z"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "sunh", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-05-30T16:40:07.031Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$4Vn1b4rcSnCS$zbFEyU4nN5ZjaWKHUoE00gKW8rEovb7+ZaAESDQQ52E=", 
+            "email": "luissol_h@hotmail.com", 
+            "date_joined": "2012-05-29T23:08:16.371Z"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-29T22:43:49.689Z", 
+            "object_repr": "twit 1 de andres", 
+            "object_id": "6", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-29T22:43:32.457Z", 
+            "object_repr": "twit 1 de luis", 
+            "object_id": "5", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-29T22:43:11.018Z", 
+            "object_repr": "twit 1 de janis", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-25T18:47:36.382Z", 
+            "object_repr": "twit 3 de admin", 
+            "object_id": "3", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-25T18:47:25.036Z", 
+            "object_repr": "twit 2 de admin", 
+            "object_id": "2", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 1, 
+            "action_time": "2012-05-25T18:47:14.954Z", 
+            "object_repr": "twit 1 de admin", 
+            "object_id": "1", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2012-05-17T01:52:27.674Z", 
+            "object_repr": "localhost:8000", 
+            "object_id": "1", 
+            "change_message": "Modifica domain y name.", 
+            "user": 1, 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "registration.registrationprofile", 
+        "fields": {
+            "activation_key": "ALREADY_ACTIVATED", 
+            "user": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "registration.registrationprofile", 
+        "fields": {
+            "activation_key": "ALREADY_ACTIVATED", 
+            "user": 3
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "registration.registrationprofile", 
+        "fields": {
+            "activation_key": "ALREADY_ACTIVATED", 
+            "user": 4
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "registration.registrationprofile", 
+        "fields": {
+            "activation_key": "ALREADY_ACTIVATED", 
+            "user": 5
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "main.perfil", 
+        "fields": {
+            "city": "Morelia", 
+            "friend": [
+                2, 
+                3
+            ], 
+            "name": "janis", 
+            "image": "img/User.png", 
+            "user": 2, 
+            "birth_date": "2012-05-17", 
+            "public": true, 
+            "biography": "m encanta dormir jejeje"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "main.perfil", 
+        "fields": {
+            "city": "Morelia2", 
+            "friend": [
+                2, 
+                3
+            ], 
+            "name": "Luis Antonio Solache Hernadez", 
+            "image": "img/User.png", 
+            "user": 3, 
+            "birth_date": "2012-05-19", 
+            "public": true, 
+            "biography": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "main.perfil", 
+        "fields": {
+            "city": "", 
+            "friend": [
+                1, 
+                2, 
+                5
+            ], 
+            "name": "admin", 
+            "image": "img/User.png", 
+            "user": 1, 
+            "birth_date": "2012-05-30", 
+            "public": false, 
+            "biography": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "main.perfil", 
+        "fields": {
+            "city": "Morelia", 
+            "friend": [
+                1, 
+                3, 
+                4
+            ], 
+            "name": "andres", 
+            "image": "img/User.png", 
+            "user": 4, 
+            "birth_date": "2012-05-18", 
+            "public": true, 
+            "biography": "bio"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "main.perfil", 
+        "fields": {
+            "city": null, 
+            "friend": [
+                1, 
+                3
+            ], 
+            "name": "sunh", 
+            "image": "img/User.png", 
+            "user": 5, 
+            "birth_date": "2012-05-29", 
+            "public": true, 
+            "biography": null
+        }
+    }
+]

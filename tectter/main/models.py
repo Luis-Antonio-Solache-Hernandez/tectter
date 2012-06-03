@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 class Perfil(models.Model):
     user = models.OneToOneField(User)
     name = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='img', default='img/User.png')
-    birth_date = models.DateField(auto_now=True)
+    image = models.ImageField(upload_to='image', default='image/User.png')
+    birth_date = models.DateField(blank=True, null=True)
     city = models.CharField(max_length=50, blank=True, null=True)
     public = models.BooleanField(default=True)
     biography = models.TextField(max_length=50, blank=True, null=True)
-    friend = models.ManyToManyField('self', blank=True)
+    friend = models.ManyToManyField('self', blank=True, symmetrical=False)
 
     def __unicode__(self):
         return '%s' % self.user.username
@@ -31,3 +31,6 @@ class Tweet(models.Model):
 
     def __unicode__(self):
         return '%s' % self.status
+
+    class Meta:
+        ordering = ['-created_at']

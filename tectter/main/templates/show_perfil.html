@@ -1,9 +1,13 @@
 <html>
 <head>
     <title>{{perfil.name}} -Blog</title>
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src ="{{ STATIC_URL }}index.js"></script>
+    <link rel ="stylesheet" type="text/css" href="{{STATIC_URL}}index.css">
 </head>
 <body>
     <a href = "{% url index %}">Home</a>
+</br><div class="improfile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}" /></div>
     <h1>{{perfil.name}}</h1>
     <h3>{{ perfil.user.username }} </h3>
 {% block contenido %}
@@ -36,11 +40,12 @@
     </br><a href="{% url show_perfil perfil.user.username %}seguidores/">{{ nseguidores }} Seguidores</a>
     </br><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a>
 {% if tweets %}
-    {% if siguiendo or useractual == perfil.user or perfil.public %}
+    {% if mesigue or useractual == perfil.user or perfil.public %}
         <h1>Tweets</h1>
         {% for tweet in tweets %}
             <div>
-                <p><font size=5><b>{{ tweet.status }}</font></b>
+                <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
+                    <font size=5><b>{{ tweet.status }}</font></b>
                 </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
                 {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
                 </br>
@@ -56,8 +61,10 @@
     <h1>Seguidores</h1>
     {% for perfil in seguidores %}
         <div>
-            <p><font size=5><b>{{ perfil.name }}</font></b>
+            <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
+                <font size=5><b>{{ perfil.name }}</font></b>
             </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
+            <p>{{ perfil.biography }}</p>
             <form action="/seguir/" method="post">
                 {% csrf_token %}
                 {% csrf_token %}
@@ -78,8 +85,10 @@
     <h1>Siguiendo a:</h1>
     {% for perfil in sig %}
         <div>
-            <p><font size=5><b>{{ perfil.name }}</font></b>
+            <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
+                <font size=5><b>{{ perfil.name }}</font></b>
             </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
+            <p>{{ perfil.biography }}</p>
             </br>
         <form action="/seguir/" method="post">
                 {% csrf_token %}

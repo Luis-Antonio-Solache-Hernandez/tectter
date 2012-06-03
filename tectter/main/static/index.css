@@ -1,7 +1,6 @@
 DIV.miniprofile{
 background-color: #D0E4F2;
 padding: 5px;
-height: 160px;
 width: 270px;
 border: 1px solid #D0E4F2;
 border-radius: 1em;
@@ -16,4 +15,28 @@ border: 2px solid #98AFC7;
  padding: 3px;
  background-color: 98AFC7;
  position:relative;
+}
+img {
+    position: relative;
+}
+.tomawidth{
+    width:100%;
+}
+.tomaheight{
+    height:100%;
+}
+.image {
+    overflow:hidden;
+    width: 32px;
+    height: 32px;
+}
+.improfile {
+    overflow:hidden;
+    width: 128px;
+    height: 128px;
+}
+.minprofile {
+    overflow:hidden;
+    width: 48px;
+    height: 48px;
 }

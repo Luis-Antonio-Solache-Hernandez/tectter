@@ -9,6 +9,8 @@
 <body>
     <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
         <div class="miniprofile">
+            <div class="image">
+            <img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
             <a href="{% url show_perfil perfil.user.username %}"> {{ perfil.name }} </a>
         </br><h9>Editar tu perfil</h9>
             <table width="80%" cellspacing="5" cellpadding="0">
@@ -31,7 +33,9 @@
 {% for tweet in tweets %}
 <div>
         <p><font size=5><b>{{ tweet.status }}</font></b>
-        </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
+        </br>
+        <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
+        <font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
         {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
     </br>
 {% if tweet.name == perfil %}

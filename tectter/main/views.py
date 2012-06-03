@@ -13,7 +13,7 @@ def index(request):
     try:
         perfil = Perfil.objects.get(user=request.user)
         seguidores = Perfil.objects.filter(friend=perfil).count()
-        siguiendo = perfil.friend.all()
+        siguiendo = perfil.friend.filter(public=True) | perfil.friend.filter(public=False, friend__in=[perfil])
         tweets = Tweet.objects.filter(name__id__in=siguiendo) | Tweet.objects.filter(name=perfil)
     except Perfil.DoesNotExist:
         perfil = request.user.get_profile()
@@ -57,15 +57,22 @@ def show_perfil(request, username):
     perfil = Perfil.objects.get(user=user)
     tweets = Tweet.objects.filter(name=perfil)
     nseguidores = Perfil.objects.filter(friend=perfil).count()
+    perfilactual = Perfil.objects.get(user=request.user)
     try:
         siguiendo = Perfil.objects.get(user=request.user, friend=perfil)
         siguiendo = True
     except Perfil.DoesNotExist:
         siguiendo = False
+    try:
+        mesigue = Perfil.objects.get(user=perfil, friend=perfilactual)
+        mesigue = True
+    except Perfil.DoesNotExist:
+        mesigue = False
     return render_to_response('show_perfil.html', {
         'perfil': perfil,
         'useractual': request.user,
         'siguiendo': siguiendo,
+        'mesigue': mesigue,
         'tweets': tweets,
         'ntweets': tweets.count(),
         'nseguidores': nseguidores
@@ -78,7 +85,7 @@ def edit_perfil(request, username):
     form = PerfilForm(instance=perfil)
     tweets = Tweet.objects.filter(name=perfil)
     if request.method == 'POST':
-        form = PerfilForm(request.POST, instance=perfil)
+        form = PerfilForm(request.POST, request.FILES, instance=perfil)
         if form.is_valid():
             form.save()
             return render_to_response('show_perfil.html', {

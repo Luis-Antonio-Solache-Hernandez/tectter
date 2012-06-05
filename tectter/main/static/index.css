@@ -1,20 +1,49 @@
-DIV.miniprofile{
-background-color: #D0E4F2;
-padding: 5px;
+body {
+background-color: #5D0606;
+font-family:arial, "courier new", impact;
+font-weight: normal;
+color:#FFFFFF;
+}
+#content{
+    padding: 10px 10px 10px 10px;
+    width: 1000px;
+    min-height: 700px;
+    margin: 0px auto;
+    background-color: rgba(255, 255, 255, .1);
+}
+a{
+    text-decoration:none;
+    color: #5D0606;
+}
+a:hover{
+    color:#000000;
+}
+aside {
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.miniprofile{
+background-color: #F7C223;
+padding: 15px 15px 15px 15px;
 width: 270px;
 border: 1px solid #D0E4F2;
-border-radius: 1em;
-box-shadow: #5CB3FF 0.5em 0.5em 0.3em; }
+border-radius: 20px;
+}
 
 .newtwetter{
-background-color: #98AFC7;
-border: 2px solid #98AFC7;
+background-color: #F0E3A1;
+border: 2px solid #F0E3A1;
 }
 
 .bt{
  padding: 3px;
- background-color: 98AFC7;
+ background-color: #6C1C20;
  position:relative;
+ border-radius: 20px;
+ color:#F0E3A1;
+
 }
 img {
     position: relative;
@@ -26,17 +55,64 @@ img {
     height:100%;
 }
 .image {
+    border-radius:15px;
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
     overflow:hidden;
     width: 32px;
     height: 32px;
 }
 .improfile {
+    border-radius:15px;
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
     overflow:hidden;
     width: 128px;
     height: 128px;
 }
 .minprofile {
+    border-radius:15px;
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
+    float: left;
     overflow:hidden;
     width: 48px;
     height: 48px;
+}
+
+.main{
+padding: 15px 15px 15px 15px;
+display: inline-block;
+background-color: #F7C223;
+width: 600px;
+border: 1px solid #D0E4F2;
+border-radius: 20px;
+}
+
+nav{
+background-color: #F7C223;
+display: block;
+height:20px;
+text-align:right;
+font-size:16px;
+}
+
+.loader{
+padding: 15px 15px 15px 15px;
+background-color: #BB6D6D;
+width: 962px;
+display: inline-block;
+border: 1px solid #D0E4F2;
+border-radius: 20px;
+}
+
+.hright{
+padding: 15px 15px 15px 15px;
+display: inline-block;
+background-color:  #BB6D6D;
+width: 130px;
+float: right;
 }

@@ -7,12 +7,16 @@
     <link rel ="stylesheet" type="text/css" href="{{STATIC_URL}}index.css">
 </head>
 <body>
-    <a href="{% url django.contrib.auth.views.logout %}" > logout </a>
+    <nav>
+    <a href="{% url django.contrib.auth.views.logout %}" > Logout </a>
+    </nav>
+    <div id="content">
+    <aside>
         <div class="miniprofile">
             <div class="image">
             <img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
-            <a href="{% url show_perfil perfil.user.username %}"> {{ perfil.name }} </a>
-        </br><h9>Editar tu perfil</h9>
+            {{ perfil.name }}<br/>
+            <a href="{% url show_perfil perfil.user%}"> Ver pagina de perfil </a>
             <table width="80%" cellspacing="5" cellpadding="0">
             <tr>
             <td><a href="{% url show_perfil perfil.user.username %}"> {{ perfil.tweet.count }} Tweets</a></td>
@@ -27,22 +31,23 @@
             <button class=bt type="submit"><strong>Twittear</strong>
             </form>
         </div>
+        </aside>
         <div class="main">
             {% if tweets %}
-        <h1>Tweets</h1>
-{% for tweet in tweets %}
-<div>
-        <p><font size=5><b>{{ tweet.status }}</font></b>
-        </br>
-        <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
-        <font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
-        {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
-    </br>
-{% if tweet.name == perfil %}
-                <a href="/tweet/{{ tweet.id }}/delete" >eliminar</a>
+            <h1>Tweets</h1>
+            {% for tweet in tweets %}
+            <div>
+                <font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
+                {{ tweet.name.user.username }}</a>  @{{tweet.name.name}} {{ tweet.created_at }}</font>
+                <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
+                <p><font size=5><b>{{ tweet.status }}</font></b>
+                </br>
+                {% if tweet.name == perfil %}
+                <a href="/tweet/{{ tweet.id }}/delete" >Eliminar</a>
                 {% endif %}</br>
-    </div>
+            </div>
     {% endfor %}</div>
     {% endif %}
+</div>
 </body>
 </html>

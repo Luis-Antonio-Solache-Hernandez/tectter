@@ -7,36 +7,57 @@
 </head>
 <body>
     <img id='imagen' scr= "{{MEDIA_URL}}User.png"/>
-    <a href = "{% url index %}">Home</a>
-</br><div class="improfile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}" /></div>
-    <h1>{{perfil.name}}</h1>
-    <h3>{{ perfil.user.username }} </h3>
-{% block contenido %}
-<section>
-    <header>
-        <h3>Ciudad: {{ perfil.city }}</h3>
-        <p>
-            Ultima vez conectado: {{ perfil.birth_date }}<br>
-            Email: <a href="mailto:{{ perfil.user.email }}">{{ perfil.user.email }}</a>
-        </p>
-</section>
-{% endblock %}
-    {% if useractual == perfil.user %}
-    </br><a href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
-    {% else %}
-    <form action="/seguir/" method="post">
+    <nav>
+        <a href = "{% url index %}">Home </a>
+    </nav>
+    <div id="content">
+        <div class="loader">
+            <div class="hright">
+                {% if useractual == perfil.user %}
+                </br><a class="bt" href="{% url show_perfil perfil.user.username %}edit/">Editar Perfil</a>
+                {% else %}
+                    <form action="/seguir/" method="post">
                 {% csrf_token %}
                 {% csrf_token %}
                 <input type="hidden" name="username" value="{{ perfil.user.username }}">
                 <p>
                     {% if siguiendo %}
-                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                        <input class="bt" type="submit" value="Dejar de seguir">
                     {% else %}
-                        <input class="btn btn-success" type="submit" value="Seguir">
+                        <input class="bt" type="submit" value="Seguir">
                     {% endif %}
                 </p>
             </form>
-    {% endif %}
+            {% endif %}
+                <table width="80%" cellspacing="5" cellpadding="0" align="right" valing="top">
+                    <tr>
+                        <tr>
+                            <td><a href="{% url show_perfil perfil.user.username %}"> {{ perfil.tweet.count }} Tweets</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="{% url show_perfil perfil.user.username %}seguidores/"> {{ seguidores }} Seguidores</a></td>
+                        </tr>
+                    </tr>
+                </table>
+            </div>
+            </br><div class="improfile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}" /></div>
+            <h1> {{perfil.name}}</h1>
+            <h3> @{{ perfil.user.username }} </h3>
+            {% block contenido %}
+            <section>
+                <header>
+                    <h3>Ciudad: {{ perfil.city }}</h3>
+                    <p>
+                        Ultima vez conectado: {{ perfil.birth_date }}<br>
+                        Email: <a href="mailto:{{ perfil.user.email }}">{{ perfil.user.email }}</a>
+                    </p>
+                </section>
+            {% endblock %}
+        </div>
+        <aside>
     </br><a href="{% url show_perfil perfil.user.username %}">{{ ntweets }} Tweets</a>
     </br><a href="{% url show_perfil perfil.user.username %}seguidores/">{{ nseguidores }} Seguidores</a>
     </br><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a>

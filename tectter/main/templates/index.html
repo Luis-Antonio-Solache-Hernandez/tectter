@@ -36,16 +36,16 @@
             {% if tweets %}
             <h1>Tweets</h1>
             {% for tweet in tweets %}
-            <div>
+            <article>
                 <font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
                 {{ tweet.name.user.username }}</a>  @{{tweet.name.name}} {{ tweet.created_at }}</font>
                 <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
                 <p><font size=5><b>{{ tweet.status }}</font></b>
                 </br>
                 {% if tweet.name == perfil %}
-                <a href="/tweet/{{ tweet.id }}/delete" >Eliminar</a>
+                <pre><a href="/tweet/{{ tweet.id }}/delete" >Eliminar</a> <a href="/tweet/{{ tweet.id }}/edit" >Editar</a></pre>
                 {% endif %}</br>
-            </div>
+            </article>
     {% endfor %}</div>
     {% endif %}
 </div>

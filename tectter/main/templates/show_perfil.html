@@ -57,32 +57,35 @@
                 </section>
             {% endblock %}
         </div>
-        <aside>
+        <div class="content2">
+        <aside class="miniprofile">
     </br><a href="{% url show_perfil perfil.user.username %}">{{ ntweets }} Tweets</a>
     </br><a href="{% url show_perfil perfil.user.username %}seguidores/">{{ nseguidores }} Seguidores</a>
     </br><a href="{% url show_perfil perfil.user.username %}siguiendo/"> {{ perfil.friend.count }} Siguiendo</a>
+</aside>
+<div class="main">
 {% if tweets %}
     {% if mesigue or useractual == perfil.user or perfil.public %}
         <h1>Tweets</h1>
         {% for tweet in tweets %}
-            <div>
+            <article>
                 <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
                     <font size=5><b>{{ tweet.status }}</font></b>
                 </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
                 {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
                 </br>
                 {% if useractual == perfil.user %}
-                <a href="/tweet/{{ tweet.id }}/delete" >eliminar</a>
+                <pre><a href="/tweet/{{ tweet.id }}/delete" >Eliminar</a> <a href="/tweet/{{ tweet.id }}/edit" >Editar</a></pre>
                 {% endif %}
             </br>
-            </div>
+            </article>
         {% endfor %}
     {% endif %}
 {% endif %}
 {% if seguidores %}
     <h1>Seguidores</h1>
     {% for perfil in seguidores %}
-        <div>
+        <article>
             <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
                 <font size=5><b>{{ perfil.name }}</font></b>
             </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
@@ -93,20 +96,20 @@
                 <input type="hidden" name="username" value="{{ perfil.user.username }}">
                 <p>
                     {% if perfil in myfriends %}
-                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                        <input class="bt" type="submit" value="Dejar de seguir">
                     {% else %}
-                        <input class="btn btn-success" type="submit" value="Seguir">
+                        <input class="bt" type="submit" value="Seguir">
                     {% endif %}
                 </p>
             </form>
         </br></br>
-        </div>
+        </article>
     {% endfor %}
 {% endif %}
 {% if sig %}
     <h1>Siguiendo a:</h1>
     {% for perfil in sig %}
-        <div>
+        <article>
             <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ perfil.image }}"/></div>
                 <font size=5><b>{{ perfil.name }}</font></b>
             </br><font size=2> <a href="{% url show_perfil perfil.user.username %}" >{{ perfil.user.username }}</a></font>
@@ -118,16 +121,17 @@
                 <input type="hidden" name="username" value="{{ perfil.user.username }}">
                 <p>
                     {% if perfil in myfriends %}
-                        <input class="btn btn-danger" type="submit" value="Dejar de seguir">
+                        <input class="bt" type="submit" value="Dejar de seguir">
                     {% else %}
-                        <input class="btn btn-success" type="submit" value="Seguir">
+                        <input class="bt" type="submit" value="Seguir">
                     {% endif %}
                 </p>
             </form>
         </br>
-        </div>
+        </article>
     {% endfor %}
 {% endif %}
-
+</div>
+</div>
 </body>
 </html>

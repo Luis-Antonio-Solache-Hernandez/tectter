@@ -10,4 +10,5 @@ urlpatterns = patterns('main.views',
     url(r'^seguir/$', 'seguir'),
     url(r'^tweetear/$', 'tweetear'),
     url(r'^tweet/(?P<pk>\d+)/delete$', 'delete_tweet', name='delete'),
+    url(r'^tweet/(?P<pk>\d+)/edit$', 'edit_twitt', name='edit'),
 )

@@ -10,6 +10,10 @@ color:#FFFFFF;
     min-height: 700px;
     margin: 0px auto;
     background-color: rgba(255, 255, 255, .1);
+    text-align:center;
+}
+#content *{
+    text-align: left;
 }
 a{
     text-decoration:none;
@@ -103,10 +107,11 @@ font-size:16px;
 .loader{
 padding: 15px 15px 15px 15px;
 background-color: #BB6D6D;
-width: 962px;
+width: 935px;
 display: inline-block;
 border: 1px solid #D0E4F2;
 border-radius: 20px;
+margin: 0px auto 20px auto;
 }
 
 .hright{
@@ -115,4 +120,8 @@ display: inline-block;
 background-color:  #BB6D6D;
 width: 130px;
 float: right;
+}
+
+article:hover{
+    background-color: rgba(0, 0, 0, .1);
 }

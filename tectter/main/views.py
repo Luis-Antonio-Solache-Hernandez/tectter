@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from main.models import Perfil, Tweet
-from main.forms import PerfilForm
+from main.forms import PerfilForm, TweetForm
 
 
 @login_required
@@ -148,6 +148,7 @@ def siguiendo(request, username):
     }, RequestContext(request))
 
 
+@login_required
 def seguir(request):
     username = request.POST['username']
     user = User.objects.get(username=username)
@@ -161,6 +162,7 @@ def seguir(request):
     return redirect(request.META['HTTP_REFERER'])
 
 
+@login_required
 def tweetear(request):
     status = request.POST['status']
     perfil = Perfil.objects.get(user=request.user)
@@ -168,6 +170,21 @@ def tweetear(request):
     return redirect('index')
 
 
+@login_required
 def delete_tweet(request, pk):
     Tweet.objects.filter(pk=pk).delete()
     return redirect(request.META['HTTP_REFERER'])
+
+
+@login_required
+def edit_twitt(request, pk):
+    tweet = get_object_or_404(Tweet, pk=pk)
+    form = TweetForm(instance=tweet)
+    if request.method == 'POST':
+        form = TweetForm(request.POST, instance=tweet)
+        if form.is_valid():
+            form.save()
+            return redirect(index)
+    return render_to_response('add_twitt.html', {
+        'form': form,
+        }, RequestContext(request))

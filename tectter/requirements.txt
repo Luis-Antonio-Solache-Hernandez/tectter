@@ -1,0 +1,5 @@
+Django==1.4
+Pillow==1.7.7
+django-password-reset==0.2
+django-registration==0.8
+wsgiref==0.1.2

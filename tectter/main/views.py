@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from main.models import Perfil, Tweet
 from main.forms import PerfilForm, TweetForm
+from django.contrib.auth.decorators import permission_required
 
 
 @login_required
@@ -52,6 +53,7 @@ def login(request):
 
 
 @login_required
+@permission_required('main.can_vote')
 def show_perfil(request, username):
     user = User.objects.get(username=username)
     perfil = Perfil.objects.get(user=user)
@@ -168,6 +170,10 @@ def tweetear(request):
     perfil = Perfil.objects.get(user=request.user)
     Tweet.objects.create(name=perfil, status=status)
     return redirect('index')
+
+
+def user_can_vote(user):
+    return user.is_authenticated() and user.has_perm("polls.can_vote")
 
 
 @login_required

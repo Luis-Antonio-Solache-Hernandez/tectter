@@ -1,3 +1,4 @@
+{% load humanize %}
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -38,7 +39,7 @@
             {% for tweet in tweets %}
             <article>
                 <font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
-                {{ tweet.name.user.username }}</a>  @{{tweet.name.name}} {{ tweet.created_at }}</font>
+                {{ tweet.name.user.username }}</a>  @{{tweet.name.name}} {{ tweet.created_at|naturaltime }}</font>
                 <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
                 <p><font size=5><b>{{ tweet.status }}</font></b>
                 </br>

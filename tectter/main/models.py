@@ -12,6 +12,14 @@ class Perfil(models.Model):
     biography = models.TextField(max_length=50, blank=True, null=True)
     friend = models.ManyToManyField('self', blank=True, symmetrical=False)
 
+    class Meta:
+        permissions = (
+        # Permission identifier
+        ("can_drive", "perm1"),
+        ("can_vote", "perm2"),
+        ("can_drink", "perm3"),
+        )
+
     def __unicode__(self):
         return '%s' % self.user.username
 

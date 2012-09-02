@@ -1,3 +1,4 @@
+{% load humanize %}
 <html>
 <head>
     <title>{{perfil.name}} -Blog</title>
@@ -6,7 +7,6 @@
     <link rel ="stylesheet" type="text/css" href="{{STATIC_URL}}index.css">
 </head>
 <body>
-    <img id='imagen' scr= "{{MEDIA_URL}}User.png"/>
     <nav>
         <a href = "{% url index %}">Home </a>
     </nav>
@@ -72,7 +72,7 @@
                 <div class="minprofile"><img id="image" src="{{ MEDIA_URL }}{{ tweet.name.image }}"/></div>
                     <font size=5><b>{{ tweet.status }}</font></b>
                 </br><font size=2> <a href="{% url show_perfil tweet.name.user.username %}" >
-                {{ tweet.name.user.username }}</a> at {{ tweet.created_at }}</font>
+                {{ tweet.name.user.username }}</a> {{ tweet.created_at|naturaltime }}</font>
                 </br>
                 {% if useractual == perfil.user %}
                 <pre><a href="/tweet/{{ tweet.id }}/delete" >Eliminar</a> <a href="/tweet/{{ tweet.id }}/edit" >Editar</a></pre>

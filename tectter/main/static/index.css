@@ -25,8 +25,8 @@ a:hover{
 aside {
     float: left;
     display: inline-block;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 5px;
+    margin-left: 15px;
 }
 .miniprofile{
 background-color: #F7C223;
@@ -59,7 +59,7 @@ img {
     height:100%;
 }
 .image {
-    border-radius:15px;
+    border-radius:5px;
     margin-right: 10px;
     float: left;
     display: inline-block;
@@ -77,7 +77,9 @@ img {
     height: 128px;
 }
 .minprofile {
-    border-radius:15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     margin-right: 10px;
     float: left;
     display: inline-block;
@@ -88,10 +90,10 @@ img {
 }
 
 .main{
-padding: 15px 15px 15px 15px;
+padding: 10px 0px 10px 0px;
 display: inline-block;
 background-color: #F7C223;
-width: 600px;
+width: 640px;
 border: 1px solid #D0E4F2;
 border-radius: 20px;
 }
@@ -122,6 +124,9 @@ width: 130px;
 float: right;
 }
 
+article{
+    padding: 0px 5px 0px 5px;
+}
 article:hover{
     background-color: rgba(0, 0, 0, .1);
 }
